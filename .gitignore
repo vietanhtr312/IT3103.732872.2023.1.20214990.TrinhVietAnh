@@ -2,10 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-Ex1.java
-Main.java
-HelloWorld.java
-Main.java
+
 
 
 ### Eclipse ###
