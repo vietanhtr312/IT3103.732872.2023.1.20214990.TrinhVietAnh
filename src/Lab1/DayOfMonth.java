@@ -1,6 +1,5 @@
 package Lab1;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 
 public class DayOfMonth {
@@ -14,7 +13,9 @@ public class DayOfMonth {
             String[] m = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
             System.out.println("Nhap nam: ");
             strYear = sc.next();
-            if (Character.isLetter(strYear.charAt(1))) continue;
+            if (Character.isLetter(strYear.charAt(1))) {
+                System.out.println("Hay nhap lai");
+                continue;}
             year = Integer.parseInt(strYear);
             System.out.println("Nhap thang: ");
             strMonth = sc.next();
@@ -24,6 +25,7 @@ public class DayOfMonth {
                     if (m[i].contains(strMonth)) month = i + 1;
 
             } else month = Integer.parseInt(strMonth);
+            if (month == 0) System.out.println("Hay nhap lai");
         } while (month == 0 );
         switch (month) {
             case 1: case 3: case 5: case 7: case 8: case 10: case 12:
