@@ -24,6 +24,6 @@ public class SortArray {
                 sum += A[i];
             }
         System.out.println("\nGia tri trung binh cac phan tu trong mang: " + (float)sum/n);
-
+        System.exit(0);
     }
 }

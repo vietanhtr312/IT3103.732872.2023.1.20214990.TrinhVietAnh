@@ -25,5 +25,6 @@ public class AddMatrices {
                 System.out.print(C[i][j] + " ");
             System.out.println();
         }
+        System.exit(0);
     }
 }

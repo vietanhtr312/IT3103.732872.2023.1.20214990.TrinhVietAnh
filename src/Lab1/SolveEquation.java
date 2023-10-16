@@ -49,10 +49,15 @@ public class SolveEquation{
                 } else System.out.println("He phuong trinh co nghiem duy nhat x1 = " + (float)D1 / D + " va x2 = " + (float)D2 / D);
             }
             if (choose == 3) {
+                System.out.println("Phuong trinh bac hai");
                 int a, b, c;
                 System.out.println("Nhap cac he so: ");
-                System.out.print("a = ");
-                a = sc.nextInt();
+                do {
+                    System.out.print("a = ");
+                    a = sc.nextInt();
+                    if ( a == 0) System.out.println("Hay nhap lai");
+                } while (a == 0);
+
                 System.out.print("b = ");
                 b = sc.nextInt();
                 System.out.print("c = ");

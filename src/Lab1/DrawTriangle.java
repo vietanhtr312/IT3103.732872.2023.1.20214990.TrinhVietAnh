@@ -8,7 +8,7 @@ public class DrawTriangle {
         System.out.println("Nhap x: ");
         x = sc.nextInt();
         for(int i = 0; i < x; i++){
-            for (int j = x; j >= i; j--)
+            for (int j = x; j > i; j--)
                 System.out.print(" ");
             for (int k = 1; k <= (2*i +1) ; k++)
                 System.out.print("*");
