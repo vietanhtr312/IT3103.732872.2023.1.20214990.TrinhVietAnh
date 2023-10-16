@@ -1,4 +1,4 @@
-package Lab1;
+package Lab1;                    // Trinh Viet Anh - 20214990
 // Example 2: FirstDialog.java
 import javax.swing.JOptionPane;
 

@@ -1,4 +1,4 @@
-package Lab1;
+package Lab1;               // Trinh Viet Anh - 20214990
 import java.util.Scanner;
 public class AddMatrices {
     public static void main(String[] args) {

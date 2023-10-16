@@ -1,4 +1,4 @@
-package Lab1;
+package Lab1;                    // Trinh Viet Anh - 20214990
 import javax.swing.JOptionPane;
 public class ShowTwoNumber{
     public static void main (String[] arg){

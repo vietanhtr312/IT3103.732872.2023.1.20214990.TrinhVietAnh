@@ -1,4 +1,4 @@
-package Lab1;
+package Lab1;                    // Trinh Viet Anh - 20214990
 import java.util.Scanner;
 public class DayOfMonth {
     public static void main(String[] args) {
@@ -9,32 +9,30 @@ public class DayOfMonth {
         do {
             String[] m = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
             System.out.println("Nhap nam: ");
-            strYear = sc.next();
-            if (Character.isLetter(strYear.charAt(1))) {
-                System.out.println("Hay nhap lai");
+            strYear = sc.nextLine();
+            if (Character.isLetter(strYear.charAt(0))) { System.out.println("Hay nhap lai");
                 continue;}
             year = Integer.parseInt(strYear);
+            if (year < 0){ System.out.println("Hay nhap lai");
+                continue;}
             System.out.println("Nhap thang: ");
-            strMonth = sc.next();
+            strMonth = sc.nextLine();
             if (strMonth.length() > 2) {
                 if (strMonth.endsWith(".")) strMonth = strMonth.substring(0, 3);
                 for (int i = 0; i < 12; i++)
                     if (m[i].contains(strMonth)) month = i + 1;
-
             } else month = Integer.parseInt(strMonth);
-            if (month == 0) System.out.println("Hay nhap lai");
-        } while (month == 0 );
+            if (month == 0 || month < 0) System.out.println("Hay nhap lai");
+        } while (month == 0 || month < 0);
         switch (month) {
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-                System.out.println("So ngay trong thang " + month + " nam " + year + " la 31");
-                break;
-            case 4: case 6: case 9: case 11:
-                System.out.println("So ngay trong thang " + month + " nam " + year + " la 30");
-                break;
-            case 2:
-                if (year%4 != 0 || (year %100 == 0 && year %400 != 0)) System.out.println("So ngay trong thang 2 nam " + year + " la 28");
+            case 1, 3, 5, 7, 8, 10, 12 ->
+                    System.out.println("So ngay trong thang " + month + " nam " + year + " la 31");
+            case 4, 6, 9, 11 -> System.out.println("So ngay trong thang " + month + " nam " + year + " la 30");
+            case 2 -> {
+                if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0))
+                    System.out.println("So ngay trong thang 2 nam " + year + " la 28");
                 else System.out.println("So ngay trong thang 2 nam " + year + " la 29");
-
+            }
         }
         System.exit(0);
     }
