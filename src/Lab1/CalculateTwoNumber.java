@@ -1,9 +1,11 @@
 package Lab1;                   // Trinh Viet Anh - 20214990
 import javax.swing.JOptionPane;
-public class CaculateTwoNumber{
+public class CalculateTwoNumber{
         public static void main (String[] arg){
             String strNum1, strNum2;
             double num2;
+
+            // Input two number
             strNum1 = JOptionPane.showInputDialog(null,
                     "Please input the first number: ", "Input the first number",
                     JOptionPane.INFORMATION_MESSAGE);
@@ -17,11 +19,12 @@ public class CaculateTwoNumber{
                 JOptionPane.showMessageDialog(null,"Hay nhap lai so khac 0");}
             while (num2 == 0);
 
-            double sum = num1 + num2;                   // caculate sum
+            double sum = num1 + num2;                   // calculate sum
             double dif = num1 - num2;                   // difference
             double pro = num1 * num2;                   // product
             double quo = num1 / num2;                   // quotient
 
+            // Print result
             System.out.println("Tong cua 2 so: " + sum);
             System.out.println("Hieu cua 2 so: " + dif);
             System.out.println("Tich cua 2 so: " + pro);

@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class AddMatrices {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Input size of matrices
         System.out.println("Nhap kich thuoc cua mang");
         int n = sc.nextInt();
         int m = sc.nextInt();
         int[][] A = new int[n][m], B = new int[n][m], C = new int[n][m];
+        // Input elements of matrices
         System.out.println("Nhap tung phan tu cua mang A");
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
@@ -15,10 +17,11 @@ public class AddMatrices {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
                 B[i][j] = sc.nextInt();
-
+        // Calculate sum of two matrices
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
                 C[i][j] = A[i][j] + B[i][j];
+        // Print result
         System.out.println("Mang C: ");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++)

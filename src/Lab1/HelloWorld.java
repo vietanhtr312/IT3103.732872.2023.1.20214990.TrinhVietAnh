@@ -7,6 +7,5 @@ public class HelloWorld {
         System.out.println("Trinh Viet Anh - 4990");
         System.out.println("Xin chao \n cac ban!");
         System.out.println("Hello \t world!");
-
     }
 }
