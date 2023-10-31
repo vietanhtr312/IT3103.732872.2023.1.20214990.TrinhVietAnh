@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2;                                   // Trinh Viet Anh 20214990
 
 public class DigitalVideoDisc {
     private String title;
@@ -50,6 +50,10 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+    }
+
+    public void printInfo(){                            // print information of disc
+        System.out.println(this.title + " " + this.category + " " + this.director + " " + this.length + " " + this.cost);
     }
 
 }

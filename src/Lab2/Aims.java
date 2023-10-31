@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2;                                   // Trinh Viet Anh 20214990
 
 public class Aims {
     public static void main(String[] args) {
@@ -18,18 +18,16 @@ public class Aims {
                 "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        DigitalVideoDisc dvd4 = new DigitalVideoDisc("World"), dvd5 = new DigitalVideoDisc("View"), dvd6;
-        anOrder.addDigitalVideoDisc(dvd4);
-        anOrder.addDigitalVideoDisc(dvd5);
 
-        //print total cost of the item in the cart
+//        print total cost of the item in the cart
         System.out.print("Total cost is: ");
         System.out.println(anOrder.totalCost());
 
-        anOrder.removeDigitalVideoDisc(dvd2);
-        System.out.println(anOrder.totalCost());
+        // remove dvd3 and dvd1 out of cart
+        anOrder.removeDigitalVideoDisc(dvd3);
         anOrder.removeDigitalVideoDisc(dvd1);
         anOrder.viewCart();
+
 
     }
 }
