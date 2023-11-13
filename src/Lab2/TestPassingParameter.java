@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2;                               // Trinh Viet Anh 20214990
 
 public class TestPassingParameter {
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class TestPassingParameter {
         dvd = new DigitalVideoDisc(oldTitle);
     }
 
-    // swap method to correct swap two object
+    // swap method to correct swap two object                          // Trinh Viet Anh 20214990
     public static void swap2(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
         String tmp = dvd1.getTitle();                   //get dvd1 's title to tmp
         dvd1.setTitle(dvd2.getTitle());                 // set dvd2 's title to dvd1
