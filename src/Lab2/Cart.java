@@ -2,7 +2,7 @@ package Lab2;                                   // Trinh Viet Anh 20214990
 
 public class Cart {
     private int qtyOrdered = 0;
-    public static final int MAX_NUMBERS_ORDERED = 20;
+    public static final int MAX_NUMBERS_ORDERED = 5;
     private DigitalVideoDisc itemsOrdered[] =
             new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
@@ -45,6 +45,28 @@ public class Cart {
         for (int i = 0; i < qtyOrdered; i++)
             cost += itemsOrdered[i].getCost();
         return cost;
+    }
+
+    // 2.1 add method with the array parameter                      Trinh Viet Anh 20214990
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+        if (qtyOrdered + dvdList.length > MAX_NUMBERS_ORDERED) {            // check if the cart can add all the list or not
+            System.out.println("The list has too many disc");
+            System.out.println("Please add at most " + (MAX_NUMBERS_ORDERED - qtyOrdered) + " disc");
+        }else {
+        for (DigitalVideoDisc digitalVideoDisc : dvdList) {                 // add sequence of disc
+            addDigitalVideoDisc(digitalVideoDisc);
+            }
+        }
+    }
+
+    // 2.2 add method with two parameters                            Trinh Viet Anh 20214990
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 2 > MAX_NUMBERS_ORDERED) System.out.println("The cart is almost full, " +
+                "can not add two more disc");
+        else {
+            addDigitalVideoDisc(dvd1);
+            addDigitalVideoDisc(dvd2);
+        }
     }
 
     public void viewCart() {                                            // print information of every disc in the cart
