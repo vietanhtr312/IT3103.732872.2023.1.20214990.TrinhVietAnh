@@ -2,7 +2,7 @@ package Lab2;                                   // Trinh Viet Anh 20214990
 
 public class Cart {
     private int qtyOrdered = 0;
-    public static final int MAX_NUMBERS_ORDERED = 5;
+    public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] =
             new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
@@ -34,10 +34,12 @@ public class Cart {
                 check = true;
             }
         }
-        qtyOrdered -= 1;
         // notify
         if (!check) System.out.println("The disc has not been added");  // if no DVD removed
-        else System.out.println("Remove successful");
+        else {
+            System.out.println("Remove successful");
+            qtyOrdered -= 1;
+        }
     }
 
     public float totalCost(){                                           // calculate the cost of cart
