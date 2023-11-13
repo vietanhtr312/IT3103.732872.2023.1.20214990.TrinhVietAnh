@@ -76,7 +76,10 @@ public class DigitalVideoDisc {
                 " : " + cost + "$";
     }
 
-
-
-
+                                                    // check if the title is match
+                                                    // Trinh Viet Anh 20214990
+    public boolean isMatch(String title){
+        if (this.title.equalsIgnoreCase(title)) return true;
+        else return false;
+    }
 }

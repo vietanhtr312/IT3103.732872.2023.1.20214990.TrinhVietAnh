@@ -80,5 +80,30 @@ public class Cart {
         System.out.println("******************************************");
     }
 
+                                                                    // method to find the disc with id
+                                                                    // Trinh Viet Anh 20214990
+    public void searchById(int id){
+        boolean check = false;                                      // to check can find id or not
+        for(int i = 0; i < qtyOrdered; i++)
+            if(id == itemsOrdered[i].getId()) {                     // if list ordered has disc with same id
+                System.out.println("The disc requested: ");
+                System.out.println(itemsOrdered[i].toString());     // print out disc info
+                check = true;
+            }
+        if (!check) System.out.println("Can not find the ID requested");        // if not notify
+    }
+
+                                                                    // method to find the disc with title
+                                                                    // Trinh Viet Anh 20214990
+    public void searchbByTitle(String title){
+        boolean check = false;
+        for(int i = 0; i < qtyOrdered; i++)
+            if (itemsOrdered[i].isMatch(title)){                       // if list ordered has disc with same title
+                System.out.println("The disc requested: ");
+                System.out.println(itemsOrdered[i].toString());         // print out disc info
+                check = true;
+            }
+        if (!check) System.out.println("Can not find the ID requested");        // if not notify
+    }
 
 }
