@@ -22,12 +22,5 @@ public class Aims {
 //        print total cost of the item in the cart
         System.out.print("Total cost is: ");
         System.out.println(anOrder.totalCost());
-
-        // remove dvd3 and dvd1 out of cart
-        anOrder.removeDigitalVideoDisc(dvd3);
-        anOrder.removeDigitalVideoDisc(dvd1);
-        anOrder.viewCart();
-
-
     }
 }
