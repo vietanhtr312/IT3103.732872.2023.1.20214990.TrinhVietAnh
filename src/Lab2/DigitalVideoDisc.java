@@ -69,8 +69,14 @@ public class DigitalVideoDisc {
         this.cost = cost;
     }
 
-    public void printInfo(){                            // print information of disc
-        System.out.println(this.title + " " + this.category + " " + this.director + " " + this.length + " " + this.cost);
+    @Override                                       // override toString method to print info of disc
+                                                    //  Trinh Viet Anh 20214990
+    public String toString(){
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length +
+                " : " + cost + "$";
     }
+
+
+
 
 }

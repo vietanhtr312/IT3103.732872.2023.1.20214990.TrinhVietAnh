@@ -69,9 +69,16 @@ public class Cart {
         }
     }
 
-    public void viewCart() {                                            // print information of every disc in the cart
-        System.out.println("Item in the cart:");
-        for (int i = 0; i < qtyOrdered; i++)
-            itemsOrdered[i].printInfo();
+    public void print() {                                            // print information of every disc in the cart
+                                                                    //  Trinh Viet Anh 20214990
+        System.out.println("******************CART********************");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println(itemsOrdered[i].toString());
+        }
+
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("******************************************");
     }
+
+
 }
