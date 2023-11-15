@@ -1,6 +1,9 @@
-package Lab2;                                       // // Trinh Viet Anh 20214990
+package Lab2.hust.soict.dsai.aims;                                   // Trinh Viet Anh 20214990
 
-public class CartTest {
+import Lab2.hust.soict.dsai.aims.cart.Cart;
+import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
+public class Aims {
     public static void main(String[] args) {
         //Create a new cart
         Cart anOrder = new Cart();
@@ -11,20 +14,16 @@ public class CartTest {
         anOrder.addDigitalVideoDisc(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars",
-                "Science Fiction", "George Lucas", 87, 24.95f);
+                        "Science Fiction", "George Lucas", 87, 24.95f);
         anOrder.addDigitalVideoDisc(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
                 "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        // Test the print method
-        anOrder.print();
 
-        // Test the search method
-        anOrder.searchById(4);
-        anOrder.searchById(3);
-        anOrder.searchbByTitle("avengers");
-        anOrder.searchbByTitle("star wars");
+//        print total cost of the item in the cart
+        System.out.print("Total cost is: ");
+        System.out.println(anOrder.totalCost());
     }
 }

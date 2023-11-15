@@ -1,4 +1,7 @@
-package Lab2;                                             // Trịnh Việt Anh 20214990
+package Lab2.hust.soict.dsai.test.store;                                             // Trịnh Việt Anh 20214990
+
+import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import Lab2.hust.soict.dsai.aims.store.Store;
 
 public class StoreTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Lab2;                                   // Trinh Viet Anh 20214990
+package Lab2.hust.soict.dsai.aims.disc;                                   // Trinh Viet Anh 20214990
 
 public class DigitalVideoDisc {
     private String title;

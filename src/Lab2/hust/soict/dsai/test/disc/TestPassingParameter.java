@@ -1,4 +1,6 @@
-package Lab2;                               // Trinh Viet Anh 20214990
+package Lab2.hust.soict.dsai.test.disc;                               // Trinh Viet Anh 20214990
+
+import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
