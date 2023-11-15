@@ -99,7 +99,7 @@ public class Cart {
 
                                                                     // method to find the disc with title
                                                                     // Trinh Viet Anh 20214990
-    public void searchbByTitle(String title){
+    public void searchByTitle(String title){
         boolean check = false;
         for(int i = 0; i < qtyOrdered; i++)
             if (itemsOrdered[i].isMatch(title)){                       // if list ordered has disc with same title

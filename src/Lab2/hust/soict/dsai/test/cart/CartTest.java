@@ -27,7 +27,7 @@ public class CartTest {
         // Test the search method
         anOrder.searchById(4);
         anOrder.searchById(3);
-        anOrder.searchbByTitle("avengers");
-        anOrder.searchbByTitle("star wars");
+        anOrder.searchByTitle("avengers");
+        anOrder.searchByTitle("star wars");
     }
 }
