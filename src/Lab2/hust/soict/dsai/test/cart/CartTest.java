@@ -1,7 +1,7 @@
 package Lab2.hust.soict.dsai.test.cart;                                       // // Trinh Viet Anh 20214990
 
 import Lab2.hust.soict.dsai.aims.cart.Cart;
-import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import Lab2.hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class CartTest {
     public static void main(String[] args) {
