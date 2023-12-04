@@ -30,7 +30,23 @@ public class CompactDisc extends Disc {
         this.artist = artist;
     }
     public void addTrack(Track newTrack){
-
+        if (this.tracks.contains(newTrack))                         // to check if the disc has been added
+            System.out.println("The disc has been added");          // notify
+        else {                                                      // If not
+            this.tracks.add(newTrack);                              // add new track to arraylist
+            System.out.println("Add successful");}                  // notify success
+        }
+    public void removeTrack(Track aTrack){
+        if (this.tracks.contains(aTrack)){                          // to check if the disc has been added
+            this.tracks.add(aTrack);                                // remove the track
+            System.out.println("Remove successful");}               // notify success
+        else                                                        // If not
+            System.out.println("The disc has not been added");      // notify
+    }
+    public float getLength(){
+        float totalLength = 0;
+        for (Track track : tracks) totalLength += track.getLength();
+        return totalLength;
+    }
     }
 
-}
