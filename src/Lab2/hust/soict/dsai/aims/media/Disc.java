@@ -17,9 +17,7 @@ public class Disc extends Media{
     public void setDirector(String director) {
         this.director = director;
     }
-    public Disc() {
-        super();
-    }
+
     public Disc(String title) {
         super(title);
     }
