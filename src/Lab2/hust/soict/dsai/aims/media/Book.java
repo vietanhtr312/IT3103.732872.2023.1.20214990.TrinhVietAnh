@@ -31,4 +31,9 @@ public class Book extends Media{
         if(!authors.contains(authorName)) System.out.println("The author has not been added");
         else authors.remove(authorName);
     }
+    @Override
+    public String toString(){
+        return "Book - " + super.getTitle()+ " - " + category + " - " + getAuthors() + " - " +
+                " : " + cost + "$";
+    }
 }

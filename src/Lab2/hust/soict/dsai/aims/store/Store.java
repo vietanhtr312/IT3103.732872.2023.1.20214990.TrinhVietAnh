@@ -3,9 +3,9 @@ import Lab2.hust.soict.dsai.aims.media.Media;
 
 import java.util.ArrayList;
 
-public class Store {
+public class Store {                                                            // Trinh Viet Anh - 20214990
     public static final int MAX_NUMBERS_ITEM = 200;
-    private ArrayList<Media> itemInStore = new ArrayList<Media>();;
+    private ArrayList<Media> itemInStore = new ArrayList<Media>();
 
                                                                     // method to add media
     public void addMedia(Media newMedia) {
@@ -36,6 +36,32 @@ public class Store {
             System.out.println("Remove successful");}                       // notify success
         else                                                                // If not
             System.out.println("The disc has not been added");              // notify
+    }
+
+    public void print(){
+        System.out.println("******************STORE********************");
+        for (Media order : itemInStore) {
+            System.out.println(order.toString());
+        }
+        System.out.println("******************************************");
+    }
+    public void searchByTitle(String title){
+        boolean check = false;
+        for(Media order : itemInStore)
+            if (order.getTitle().equals(title)){                                // if itemOrdered has media with same title
+                System.out.println("The disc requested: ");
+                System.out.println(order.toString());                           // print out media info
+                check = true;
+            }
+        if (!check) System.out.println("Can not find the ID requested");        // if not notify
+    }
+    public Media searchByTitle2(String title){
+        boolean check = false;
+        for(Media order : itemInStore)
+            if (order.getTitle().equals(title)){                                // if itemOrdered has media with same title
+                return order;
+            }
+        return null;        // if not notify
     }
 
 }

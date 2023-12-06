@@ -2,9 +2,9 @@ package Lab2.hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc implements Playable {
+public class CompactDisc extends Disc implements Playable {                             // Trinh Viet Anh - 20214990
     private String artist;
-    private ArrayList<Track> tracks;
+    private ArrayList<Track> tracks = new ArrayList<Track>();
 
     public String getArtist() {
         return artist;
@@ -20,13 +20,8 @@ public class CompactDisc extends Disc implements Playable {
         this.artist = artist;
     }
 
-    public CompactDisc(String title, String category, String director, float cost, String artist) {
-        super(title, category, director, cost);
-        this.artist = artist;
-    }
-
-    public CompactDisc(String title, String category, String director, int length, float cost, String artist) {
-        super(title, category, director, length, cost);
+    public CompactDisc(String title, String category, int length, float cost, String artist) {
+        super(title, category, length, cost);
         this.artist = artist;
     }
     public void addTrack(Track newTrack){
@@ -50,7 +45,7 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
+    public void play() {                                                            // Trinh Viet Anh - 20214990
         System.out.println("Playing CompactDisc of artist: " + artist);
         System.out.println("Number of tracks: " + tracks.size());
         int i = 1;
@@ -60,6 +55,11 @@ public class CompactDisc extends Disc implements Playable {
             System.out.println("Track length: " + track.getLength());
             i++;
         }
+    }
+    @Override
+    public String toString(){
+        return "CD - " + super.getTitle()+ " - " + category + " - " + getArtist() + " - " + length +
+                " : " + cost + "$";
     }
 }
 

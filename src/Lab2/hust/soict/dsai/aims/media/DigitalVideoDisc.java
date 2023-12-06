@@ -38,7 +38,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
     }
 
     @Override
-    public void play() {
+    public void play() {                                                    // Trinh Viet Anh - 20214990
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());
     }

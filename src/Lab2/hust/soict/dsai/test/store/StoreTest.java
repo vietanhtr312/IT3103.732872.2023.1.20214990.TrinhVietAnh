@@ -1,5 +1,7 @@
 package Lab2.hust.soict.dsai.test.store;                                             // Trịnh Việt Anh 20214990
 
+import Lab2.hust.soict.dsai.aims.media.Book;
+import Lab2.hust.soict.dsai.aims.media.CompactDisc;
 import Lab2.hust.soict.dsai.aims.media.DigitalVideoDisc;
 import Lab2.hust.soict.dsai.aims.store.Store;
 
@@ -18,9 +20,15 @@ public class StoreTest {
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
                 "Animation", 18.99f);
-        DigitalVideoDisc list[] = {dvd2, dvd3};             //test add list of disc
-        aStore.addMedia(list);
+        aStore.addMedia(dvd2);
+        aStore.addMedia(dvd3);
 
-        aStore.removeMedia(dvd2);                           //test remove disc
+        CompactDisc cd1 = new CompactDisc("Christmas", "Holiday", 100, 50f, "Michael Buble");
+        aStore.addMedia(cd1);
+        Book book1 = new Book("Nha gia kim", "Giao duc");
+        book1.addAuthor("Paulo Coelho");
+        aStore.addMedia(book1);
+
+        aStore.print();
     }
 }
