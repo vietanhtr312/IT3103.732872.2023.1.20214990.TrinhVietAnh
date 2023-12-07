@@ -1,6 +1,6 @@
 package Lab2.hust.soict.dsai.aims.cart;                                   // Trinh Viet Anh 20214990
 
-import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import Lab2.hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class Cart {
     private int qtyOrdered = 0;

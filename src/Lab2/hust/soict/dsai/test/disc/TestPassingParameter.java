@@ -1,6 +1,6 @@
 package Lab2.hust.soict.dsai.test.disc;                               // Trinh Viet Anh 20214990
 
-import Lab2.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import Lab2.hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
