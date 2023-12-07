@@ -30,13 +30,6 @@ public class DigitalVideoDisc extends Disc implements Playable{
                 " : " + cost + "$";
     }
 
-                                                    // check if the title is match
-                                                    // Trinh Viet Anh 20214990
-    public boolean isMatch(String title){
-        if (this.title.equalsIgnoreCase(title)) return true;
-        else return false;
-    }
-
     @Override
     public void play() {                                                    // Trinh Viet Anh - 20214990
         System.out.println("Playing DVD: " + this.getTitle());

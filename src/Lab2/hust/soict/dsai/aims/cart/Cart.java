@@ -2,7 +2,6 @@ package Lab2.hust.soict.dsai.aims.cart;                                   // Tri
 
 import Lab2.hust.soict.dsai.aims.media.Media;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Cart {                                                       // Trinh Viet Anh 20214990
     public static final int MAX_NUMBERS_ORDERED = 20;
@@ -78,7 +77,6 @@ public class Cart {                                                       // Tri
         if (!check) System.out.println("Can not find the ID requested");        // if not notify
     }
     public Media searchByTitle2(String title){
-        boolean check = false;
         for(Media order : itemsOrdered)
             if (order.getTitle().equals(title)){
                 return order;
@@ -86,10 +84,10 @@ public class Cart {                                                       // Tri
         return null;
     }
     public void sortByTitleCost(){
-        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
     }
     public void sortByCostTitle(){
-        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
     }
     public void clearCart(){
         itemsOrdered.clear();

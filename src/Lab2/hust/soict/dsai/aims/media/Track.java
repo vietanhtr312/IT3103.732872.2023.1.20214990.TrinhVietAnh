@@ -29,7 +29,7 @@ public class Track implements Playable{                                         
 
 
     boolean equals(Track track){
-        return (this.title == track.title && this.length == track.length);
+        return (this.title.equals(track.title) && this.length == track.length);
     }
     @Override
     public String toString(){

@@ -7,17 +7,6 @@ public class Disc extends Media{                                                
         return length;
     }
 
-    public String getDirector() {
-        return director;
-    }
-    public void setLength(float length) {
-        this.length = length;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
     public Disc(String title) {
         super(title);
     }
