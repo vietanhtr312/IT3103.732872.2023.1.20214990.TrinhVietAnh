@@ -1,4 +1,4 @@
-package Lab2.hust.soict.dsai.aims.media;
+package Lab2.hust.soict.dsai.aims.media;                                           // Trinh Viet Anh - 20214990
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,5 +30,10 @@ public class Book extends Media{
     public void removeAuthor(String authorName){
         if(!authors.contains(authorName)) System.out.println("The author has not been added");
         else authors.remove(authorName);
+    }
+    @Override
+    public String toString(){
+        return "Book - " + super.getTitle()+ " - " + category + " - " + getAuthors() + " - " +
+                " : " + cost + "$";
     }
 }
