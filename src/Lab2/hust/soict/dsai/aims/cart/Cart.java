@@ -1,30 +1,33 @@
 package Lab2.hust.soict.dsai.aims.cart;                                   // Trinh Viet Anh 20214990
 
 import Lab2.hust.soict.dsai.aims.media.Media;
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import javax.naming.LimitExceededException;
 
 public class Cart {                                                       // Trinh Viet Anh 20214990
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-    public ArrayList<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
+
     public int getQtyOrder(){
         return itemsOrdered.size();
     }
-    public void addMedia(Media newMedia){                           // add media to cart
-        if(itemsOrdered.size() == MAX_NUMBERS_ORDERED)                       // check if the cart is full
-            System.out.println("The cart is almost full");
-        else {
-            if (itemsOrdered.contains(newMedia))                            // to check if the media has been added
-                System.out.println("The disc has been added");              // notify
-            else {                                                          // If not
-                itemsOrdered.add(newMedia);                                 // add new media to arraylist
-                System.out.println("Add successful");                       // notify success
-            }
+    public void addMedia(Media newMedia) throws LimitExceededException {                       // Trinh Viet Anh 20214990
+        if (itemsOrdered.contains(newMedia))
+            System.out.println("The disc has been added");
+        if(itemsOrdered.size() < MAX_NUMBERS_ORDERED){
+            itemsOrdered.add(newMedia);
+            System.out.println("Add successful");
+        } else  {
+            throw new LimitExceededException("ERROR: The number of media has reached its limit");
         }
     }
+
     public void removeMedia(Media aMedia){                          //remove media
         if (itemsOrdered.contains(aMedia)){                                 // to check if the media has been added
             itemsOrdered.remove(aMedia);                                    // remove the media

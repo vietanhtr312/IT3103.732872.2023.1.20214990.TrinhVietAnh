@@ -14,11 +14,6 @@ public class Disc extends Media{                                                
         super(title, category, cost);
     }
 
-    @Override
-    boolean equals(Media media) {
-        return super.equals(media);
-    }
-
     public Disc(String title, String category, int length, float cost) {
         super(title, category, cost);
         this.length = length;

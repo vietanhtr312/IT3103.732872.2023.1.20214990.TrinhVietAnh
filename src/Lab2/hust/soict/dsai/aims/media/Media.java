@@ -1,5 +1,7 @@
 package Lab2.hust.soict.dsai.aims.media;                                                    // Trinh Viet Anh - 20214990
 
+import Lab2.hust.soict.dsai.exception.PlayerException;
+
 import java.util.Comparator;
 
 public abstract class Media {
@@ -22,6 +24,10 @@ public abstract class Media {
         return cost;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -33,12 +39,25 @@ public abstract class Media {
         this.title = title;
         this.category = category;
     }
-    public Media(String title, String category, float cost) {
+    public Media(String title, String category, float cost) throws IllegalArgumentException{        // Trinh Viet Anh 20214990
         this.title = title;
         this.category = category;
+        if(cost >= 0)
         this.cost = cost;
+        else {
+            throw new IllegalArgumentException("ERROR: The cost can not be negative");
+        }
+
     }
-     boolean equals(Media media){
-        return (this.title.equals(media.title));
+    @Override
+    public boolean equals(Object obj) {                                     // Trinh Viet Anh 2021990
+        boolean check = false;
+        if(obj instanceof Media objMedia) {
+            if(objMedia.getTitle().equals(this.getTitle())) {
+                check = true;
+            }
+        }
+        return check;
     }
+    public void play() throws PlayerException{}
 }

@@ -3,7 +3,9 @@ package Lab2.hust.soict.dsai.aims;                                   // Trinh Vi
 import Lab2.hust.soict.dsai.aims.cart.Cart;
 import Lab2.hust.soict.dsai.aims.media.*;
 import Lab2.hust.soict.dsai.aims.store.Store;
+import Lab2.hust.soict.dsai.exception.PlayerException;
 
+import javax.naming.LimitExceededException;
 import java.util.*;
 
 public class Aims {
@@ -50,7 +52,7 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExceededException {
         Store store = new Store();
         Cart cart = new Cart();
 
@@ -85,21 +87,24 @@ public class Aims {
         book3.addAuthor("Suzy Lee");
         store.addMedia(book3);
 
-        Scanner sc = new Scanner(System.in);
-        int choice;
-        do {
-            showMenu();                                                         // Display main menu
-            choice = sc.nextInt();
-            switch (choice) {
-                case 1 -> viewStore(store, cart, sc);
-                case 2 -> updateStore(store, sc);
-                case 3 -> seeCurrentCart(cart, sc);
-                case 0 -> System.out.println("Exit!");
-                default -> System.out.println("Invalid choice!");}
-        } while (choice != 0);
-        sc.close();
+        cart.addMedia(book1);
+//        new CartScreen(cart);
+
+//        Scanner sc = new Scanner(System.in);
+//        int choice;
+//        do {
+//            showMenu();                                                         // Display main menu
+//            choice = sc.nextInt();
+//            switch (choice) {
+//                case 1 -> viewStore(store, cart, sc);
+//                case 2 -> updateStore(store, sc);
+//                case 3 -> seeCurrentCart(cart, sc);
+//                case 0 -> System.out.println("Exit!");
+//                default -> System.out.println("Invalid choice!");}
+//        } while (choice != 0);
+//        sc.close();
     }
-    public static void viewStore(Store store, Cart cart, Scanner sc) {
+    public static void viewStore(Store store, Cart cart, Scanner sc) throws LimitExceededException, PlayerException {
         store.print();                                                          // Display medias in store
         int choice;
         do {
@@ -115,7 +120,7 @@ public class Aims {
         } while (choice != 0);
     }
 
-    public static void seeMediaDetail(Store store, Cart cart, Scanner sc) {     // display detail menu of media
+    public static void seeMediaDetail(Store store, Cart cart, Scanner sc) throws LimitExceededException, PlayerException {     // display detail menu of media
         System.out.print("Please input media's title: ");                       // take the title from input
         sc.nextLine();
         String title = sc.nextLine();
@@ -140,7 +145,7 @@ public class Aims {
             System.out.println("Media not found!");                          // notify if not found
         }
     }
-    public static void addMediaToCart(Store store, Cart cart, Scanner sc) {
+    public static void addMediaToCart(Store store, Cart cart, Scanner sc) throws LimitExceededException {
         System.out.print("Please input media's title: ");
         sc.nextLine();
         String titleToAdd = sc.nextLine();
@@ -165,7 +170,7 @@ public class Aims {
             System.out.println("Media not found!");
         }
     }
-    public static void playMedia(Store store, Scanner sc) {                         // play media with input title
+    public static void playMedia(Store store, Scanner sc) throws PlayerException {                         // play media with input title
         System.out.print("Please input media's title: ");
         sc.nextLine();
         String titleToPlay = sc.nextLine();
@@ -181,7 +186,7 @@ public class Aims {
             System.out.println("Media not found!");
         }
     }
-    public static void playMedia(Media media) {                                     // play specifically media
+    public static void playMedia(Media media) throws PlayerException {                                     // play specifically media
         if (media instanceof Playable) {
             ((Playable) media).play();
         } else {
@@ -213,7 +218,7 @@ public class Aims {
         } while (choice != 0);
     }
 
-    public static void seeCurrentCart(Cart cart, Scanner sc) {
+    public static void seeCurrentCart(Cart cart, Scanner sc) throws PlayerException {
         cart.print();
         int choice;
 
@@ -245,37 +250,37 @@ public class Aims {
         sc.nextLine();
 
         switch (choice) {
-            case 1 -> filterMediaByTitle(cart, sc);
-            case 2 -> filterMediaById(cart, sc);
+//            case 1 -> filterMediaByTitle(cart, sc);
+//            case 2 -> filterMediaById(cart, sc);
             case 0 -> { /* Return */ }
             default -> System.out.println("Invalid choice!");
         }
     }
-    public static void filterMediaByTitle(Cart cart, Scanner sc) {
-        System.out.print("Input title: ");
-        String titleToFilter = sc.nextLine();
-        boolean check = false;                                                      // check if the title found
-        for (Media media : cart.getItemsOrdered()) {
-            if (media.getTitle().equals(titleToFilter)) {
-                System.out.println(media.toString());
-                check = true;
-            }
-        }
-        if(!check) System.out.println("Title not found! Please check again");         // if not notify
-    }
+//    public static void filterMediaByTitle(Cart cart, Scanner sc) {
+//        System.out.print("Input title: ");
+//        String titleToFilter = sc.nextLine();
+//        boolean check = false;                                                      // check if the title found
+//        for (Media media : cart.getItemsOrdered()) {
+//            if (media.getTitle().equals(titleToFilter)) {
+//                System.out.println(media.toString());
+//                check = true;
+//            }
+//        }
+//        if(!check) System.out.println("Title not found! Please check again");         // if not notify
+//    }
 
-    public static void filterMediaById(Cart cart, Scanner sc) {
-        System.out.print("Input ID: ");
-        int idToFilter = sc.nextInt();
-        boolean check = false;
-        for (Media media : cart.getItemsOrdered()) {
-            if (media.getId() == idToFilter) {
-                System.out.println(media.toString());
-                check = true;
-            }
-        }
-        if(!check) System.out.println("Id not found! Please check again");
-    }
+//    public static void filterMediaById(Cart cart, Scanner sc) {
+//        System.out.print("Input ID: ");
+//        int idToFilter = sc.nextInt();
+//        boolean check = false;
+//        for (Media media : cart.getItemsOrdered()) {
+//            if (media.getId() == idToFilter) {
+//                System.out.println(media.toString());
+//                check = true;
+//            }
+//        }
+//        if(!check) System.out.println("Id not found! Please check again");
+//    }
 
     public static void sortMediaInCart(Cart cart, Scanner sc) {
         System.out.println("Choice: ");
@@ -313,7 +318,7 @@ public class Aims {
     }
 
 
-    public static void playMediaFromCart(Cart cart, Scanner sc) {
+    public static void playMediaFromCart(Cart cart, Scanner sc) throws PlayerException {
         System.out.print("Please input media's title: ");
         sc.nextLine();
         String titleToPlay = sc.nextLine();

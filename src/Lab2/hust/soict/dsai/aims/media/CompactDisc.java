@@ -1,5 +1,11 @@
 package Lab2.hust.soict.dsai.aims.media;
 
+import Lab2.hust.soict.dsai.exception.PlayerException;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable {                             // Trinh Viet Anh - 20214990
@@ -44,16 +50,35 @@ public class CompactDisc extends Disc implements Playable {                     
         return totalLength;
     }
 
-    @Override
-    public void play() {                                                            // Trinh Viet Anh - 20214990
-        System.out.println("Playing CompactDisc of artist: " + artist);
-        System.out.println("Number of tracks: " + tracks.size());
-        int i = 1;
-        for (Track track : tracks) {
-            System.out.println("Play track number " + i);
-            System.out.println("Track title: " + track.getTitle());
-            System.out.println("Track length: " + track.getLength());
-            i++;
+
+    public void play() throws PlayerException {                                 // Trinh Viet Anh 20214990
+        if (this.getLength() > 0) {
+            JDialog dialog = new JDialog();
+            dialog.setTitle("Playing CD " + this.title);
+            dialog.setSize(250, 150 + (tracks.size() - 1) * 40);
+            dialog.setLayout(new GridLayout(2 * (tracks.size()) + 1, 1, 0, 1));
+            for (int i = 0; i < tracks.size(); i++) {
+                if (tracks.get(i).getLength() > 0) {
+                    JLabel label1 = new JLabel("Playing track: " + tracks.get(i).getTitle());
+                    JLabel label2 = new JLabel("Track length: " + tracks.get(i).getLength());
+                    dialog.add(label1);
+                    dialog.add(label2);
+                } else {
+                    throw new PlayerException("ERROR: Track length is non-positive");
+                }
+            }
+            JButton button = new JButton("OK");
+            dialog.add(button);
+            dialog.setLocationRelativeTo(null);
+            dialog.setVisible(true);
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    dialog.setVisible(false);
+                }
+            });
+        } else {
+            throw new PlayerException("ERROR: CD length is non-positive");
         }
     }
     @Override

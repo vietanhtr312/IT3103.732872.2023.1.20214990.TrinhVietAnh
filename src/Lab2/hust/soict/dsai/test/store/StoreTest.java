@@ -4,9 +4,11 @@ import Lab2.hust.soict.dsai.aims.media.Book;
 import Lab2.hust.soict.dsai.aims.media.CompactDisc;
 import Lab2.hust.soict.dsai.aims.media.DigitalVideoDisc;
 import Lab2.hust.soict.dsai.aims.store.Store;
+import Lab2.hust.soict.dsai.aims.screen.StoreScreen;
+import Lab2.hust.soict.dsai.exception.PlayerException;
 
 public class StoreTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         //Create a new cart
         Store aStore = new Store();
 
@@ -29,6 +31,6 @@ public class StoreTest {
         book1.addAuthor("Paulo Coelho");
         aStore.addMedia(book1);
 
-        aStore.print();
+//        aStore.print();
     }
 }

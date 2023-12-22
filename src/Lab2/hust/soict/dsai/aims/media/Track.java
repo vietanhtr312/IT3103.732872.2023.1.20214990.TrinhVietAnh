@@ -1,5 +1,12 @@
 package Lab2.hust.soict.dsai.aims.media;
 
+import Lab2.hust.soict.dsai.exception.PlayerException;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Track implements Playable{                                                 // Trinh Viet Anh - 20214990
     private String title;
     private int length;
@@ -21,10 +28,28 @@ public class Track implements Playable{                                         
         this.length = length;
     }
 
-    @Override
-    public void play() {                                                // Trinh Viet Anh - 20214990
-        System.out.println("Playing track: " + this.getTitle());
-        System.out.println("Track length: " + this.getLength());
+    public void play() throws PlayerException {                         // Trinh Viet Anh 20214990
+        if(getLength()>0) {
+            JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            dialog.setSize(400, 300);
+            dialog.setLayout(new FlowLayout());
+            dialog.setLocationRelativeTo(null);
+            JButton button = new JButton("OK");
+            dialog.add(button);
+            dialog.setVisible(true);
+            JLabel jLabel = new JLabel("Playing track: " + this.getTitle() + "\n" +
+                    "Track length: " + this.getLength());
+            dialog.add(jLabel);
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    dialog.setVisible(false);
+                }
+            });
+        }else {
+            throw new PlayerException("ERROR: Track length is non-positive!");
+        }
     }
 
 

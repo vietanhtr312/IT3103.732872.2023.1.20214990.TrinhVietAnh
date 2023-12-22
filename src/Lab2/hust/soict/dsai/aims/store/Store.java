@@ -6,28 +6,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Store {                                                            // Trinh Viet Anh - 20214990
-    public static final int MAX_NUMBERS_ITEM = 200;
     private ArrayList<Media> itemInStore = new ArrayList<Media>();
 
-                                                                    // method to add media
+    public ArrayList<Media> getItemInStore() {
+        return itemInStore;
+    }
+
+    // method to add media
     public void addMedia(Media newMedia) {
-        if (itemInStore.size() == MAX_NUMBERS_ITEM) {                       // check if the store is full
-            System.out.println("The STORE is almost full");
-        } else {
             if (itemInStore.contains(newMedia))                             // to check if the disc has been added
                 System.out.println("The disc has been added");
             else {                                                          //If not
             itemInStore.add(newMedia);
             System.out.println("Store add successful");
             }
-        }
     }
 
                                                                     // method to add a list of media
     public void  addMedia(Media[] mediaList){
         for (Media media : mediaList) {
             addMedia(media);
-            if (itemInStore.size() == MAX_NUMBERS_ITEM) break;
         }
     }
 
